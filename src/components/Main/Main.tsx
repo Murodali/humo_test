@@ -81,7 +81,7 @@ const Main: FC = () => {
           ))}
 
           {scrollPostion > window.innerHeight &&
-            setTimeout(() => {
+
               data
                 .slice(data.length / 2)
                 .map((card, index) => (
@@ -92,7 +92,7 @@ const Main: FC = () => {
                     key={index}
                   />
                 ));
-            }, 100)}
+          
         </div>
       </div>
       <div className="chat">
