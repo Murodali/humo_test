@@ -1,0 +1,224 @@
+.main {
+  display: flex;
+  flex: 0.77;
+  flex-direction: column;
+  width: 100%;
+  .active {
+    color: blue;
+  }
+
+  .not_active {
+    color: black;
+  }
+  .cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .notification_wrapper {
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 8px;
+      margin-right: 10px;
+      position: relative;
+      p {
+        position: absolute;
+        top: -20px;
+        right: 0;
+        background-color: magenta;
+        padding: 5px;
+        border-radius: 50%;
+        width: 10px;
+        height: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 12px;
+        color: white;
+      }
+      &:hover {
+        background-color: blue;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+  .card_info {
+    button {
+      color: blue;
+      background-color: rgb(231, 241, 245);
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: none;
+      &:hover {
+        background-color: blue;
+        color: white;
+        cursor: pointer;
+      }
+    }
+    .card_options {
+      ul {
+        display: flex;
+        padding: 0;
+        li {
+          list-style: none;
+          width: 150px;
+          position: relative;
+          &:hover {
+            cursor: pointer;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            background-color: blue;
+            top: 35px;
+            width: 0;
+            height: 3px;
+            left: 0;
+            transition: 0.3s;
+          }
+
+          &:hover:after {
+            width: 70%;
+            cursor: pointer;
+            pointer-events: auto;
+          }
+        }
+      }
+    }
+  }
+
+  .card_render {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+
+    .left {
+      display: flex;
+      gap: 5px;
+      p {
+        &:hover {
+          color: blue;
+          cursor: pointer;
+        }
+      }
+    }
+    .right {
+      display: flex;
+      gap: 10px;
+
+      svg:hover {
+        color: blue;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .cards_block {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    row-gap: 20px;
+    grid-gap: 10px;
+    width: 90%;
+  }
+
+  .cards_list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .chat {
+    position: fixed;
+    right: 0;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-right: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    &:hover {
+      background-color: blue;
+      color: white;
+      cursor: pointer;
+    }
+  }
+  .bug {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    right: 0;
+    color: lightgray;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .main {
+    .cards {
+      width: 100%;
+    }
+    .cards_block {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+    }
+
+    .card_render {
+      width: 85%;
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .main {
+    .cards {
+      width: 100%;
+    }
+    .cards_block {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+    }
+
+    .card_render {
+      width: 85%;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    .cards {
+      width: 100%;
+    }
+    .cards_block {
+      display: grid;
+      grid-template-columns: repeat(1, auto);
+    }
+    .card_render {
+      width: 85%;
+    }
+  }
+}
+
+@media screen and (max-width: 414) {
+  .main {
+    .cards {
+      width: 100%;
+    }
+    .cards_block {
+      display: grid;
+      grid-template-columns: repeat(1, auto);
+    }
+    .card_render {
+      width: 85%;
+    }
+  }
+}

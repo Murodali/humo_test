@@ -1,0 +1,46 @@
+.card {
+  width: 280px;
+  border-radius: 12px;
+  padding: 13px;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  .top {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    p {
+      border-bottom: 1px solid gray;
+      padding-bottom: 10px;
+    }
+    h1 {
+      padding: 5px;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 10px !important;
+      color: white;
+    }
+  }
+  .info {
+    h2 {
+      margin: 10px 10px;
+    }
+    img {
+      width: 30px;
+      margin: 10px 10px;
+    }
+    .cardNum {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &:hover {
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+  }
+}
