@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useState } from "react";
 import MasterCard from "../../assets/images/mastercard.png";
 import "./Card.scss";
 
@@ -19,12 +19,15 @@ const Card = ({ spenditure, name, cardNumber }: Props) => {
     "pink",
   ];
 
-  const color = randomColors[Math.floor(Math.random() * randomColors.length)];
+  const [color] = useState(
+    randomColors[Math.floor(Math.random() * randomColors.length)]
+  );
+
   return (
     <div className="card">
       <div className="top">
         <p> £{spenditure} spent</p>
-        <h1 style={{ background: `${color}` }}>{name[0]}</h1>
+        <h1 style={{ backgroundColor: `${color}` }}>{name[0]}</h1>
       </div>
       <div className="info">
         <h2>{name}</h2>
