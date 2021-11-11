@@ -81,18 +81,16 @@ const Main: FC = () => {
           ))}
 
           {scrollPostion > window.innerHeight &&
-
-              data
-                .slice(data.length / 2)
-                .map((card, index) => (
-                  <Card
-                    spenditure={card.spenditure}
-                    name={card.name}
-                    cardNumber={card.cardNumber}
-                    key={index}
-                  />
-                ));
-          
+            data
+              .slice(data.length / 2)
+              .map((card, index) => (
+                <Card
+                  spenditure={card.spenditure}
+                  name={card.name}
+                  cardNumber={card.cardNumber}
+                  key={index}
+                />
+              ))}
         </div>
       </div>
       <div className="chat">
