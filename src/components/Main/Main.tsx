@@ -8,6 +8,7 @@ import ChatIcon from "@mui/icons-material/Chat";
 import { data } from "../../CardData/data";
 import BugReportIcon from "@mui/icons-material/BugReport";
 import Card from "../Card/Card";
+import Delayed from "../../shared/Delay/Delay";
 
 const Main: FC = () => {
   const [blockView, setblockView] = useState<boolean>(true);
@@ -80,10 +81,9 @@ const Main: FC = () => {
             />
           ))}
 
-          {scrollPostion > window.innerHeight &&
-            data
-              .slice(data.length / 2)
-              .map((card, index) => (
+          {scrollPostion > window.innerHeight && (
+            <Delayed waitBeforeShow={2000}>
+              {data.slice(data.length / 2).map((card, index) => (
                 <Card
                   spenditure={card.spenditure}
                   name={card.name}
@@ -91,6 +91,8 @@ const Main: FC = () => {
                   key={index}
                 />
               ))}
+            </Delayed>
+          )}
         </div>
       </div>
       <div className="chat">
